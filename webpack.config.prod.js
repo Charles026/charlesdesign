@@ -1,72 +1,73 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
-const webpack = require('webpack');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const MinifyPlugin = require("babel-minify-webpack-plugin");
+const path = require('path');
 
-
-module.exports = {
-    mode:'production',
-    entry:[
-        './src/app.js'
+module.exports = function (env, argv) {
+  return {
+    mode: 'production',
+    entry: [
+      './src/app.js'
     ],
-    output: {
-        path: __dirname + '/dist',
-        filename: 'index_bundle.js'
-      },
-    optimization:{
-        minimizer : [
-            new OptimizeCssAssetsPlugin()
-        ]
-    },
-
-    plugins:[
-        new HtmlWebpackPlugin({
-            title: 'charles.design',
-            template: path.resolve('./src/index.html'),
-        }),
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin(),
-    ],
-    module:{
-        rules: [
-            {
-              test: /\.js$/,
-              exclude: /(node_modules|bower_components)/,
-              use: {
-                loader: 'babel-loader',
-                options: {
-                  presets: ['@babel/preset-env']
-                }
-              }
-            },
-            {
-                test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                        outputpath: './images',
-                        name: 'images/[hash].[ext]'
-                    }
-                  }
-                ]
-              },
-              {
-                test: /\.(html)$/,
-                use: {
-                  loader: 'html-loader',
-                  options: {
-                  }
-                }
-              },
-          ],
-       
-        
+    optimization: {
+      minimizer: [
+        new OptimizeCSSAssetsPlugin()
+      ]
     }
-};
+    ,
+    plugins: [
+      new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        title: 'Webpack starter project',
+        template: path.resolve('./src/index.html')
+      }),
+      new MiniCssExtractPlugin({
+        filename: "[name].css",
+        chunkFilename: "[id].css"
+      }),
+      new MinifyPlugin()
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader"
+          ]
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }
+        },
+        {
+          test: /\.(jpg|jpeg|gif|png|svg|webp)$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                outputPath: './images',
+                name: "[name].[ext]",
+              },
+            },
+          ],
+        },
+        {
+          test: /\.html$/,
+          use: {
+            loader: 'html-loader',
+          }
+        },
+      ]
+    }
+  };
+}

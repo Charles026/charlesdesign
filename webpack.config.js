@@ -27,6 +27,13 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
+        new webpack.ProvidePlugin({
+          $: 'jquery',
+          jQuery: 'jquery',
+          'window.jQuery': 'jquery',
+          'window.$': 'jquery',
+          Popper: ['popper.js', 'default']
+        })
     ],
     module:{
         rules: [

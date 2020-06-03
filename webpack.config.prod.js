@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = function (env, argv) {
@@ -27,7 +28,14 @@ module.exports = function (env, argv) {
         filename: "[name].css",
         chunkFilename: "[id].css"
       }),
-      new MinifyPlugin()
+      new MinifyPlugin(),
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        'window.$': 'jquery',
+        Popper: ['popper.js', 'default']
+      })
     ],
     module: {
       rules: [

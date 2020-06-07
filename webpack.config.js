@@ -5,12 +5,10 @@ const webpack = require('webpack');
 
 module.exports = {
     mode:'development',
-    entry:[
-        './src/app.js'
-    ],
+    entry:['./src/app.js'],
     output: {
         path: __dirname + '/dist',
-        filename: 'index_bundle.js'
+        filename: '[name].bundle.js'
       },
     devtool:'source-maps',
     devServer: {
@@ -24,6 +22,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'charles.design',
             template: path.resolve('./src/index.html'),
+        }),
+        new HtmlWebpackPlugin({  // Also generate a about.html
+          filename: 'about.html',
+          template: path.resolve('./src/about.html')
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),

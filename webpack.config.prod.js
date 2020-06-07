@@ -9,9 +9,11 @@ const path = require('path');
 module.exports = function (env, argv) {
   return {
     mode: 'production',
-    entry: [
-      './src/app.js'
-    ],
+    entry:['./src/app.js'],
+    output: {
+      path: __dirname + '/dist',
+      filename: '[name].[contentHash].bundle.js'
+    },
     optimization: {
       minimizer: [
         new OptimizeCSSAssetsPlugin()
@@ -22,10 +24,16 @@ module.exports = function (env, argv) {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         title: 'Webpack starter project',
-        template: path.resolve('./src/index.html')
+        template: path.resolve('./src/index.html'),
+        favicon: path.resolve('./src/images/favicon.ico')
+      }),
+      new HtmlWebpackPlugin({  // Also generate a about.html
+        filename: 'about.html',
+        template: path.resolve('./src/about.html'),
+        favicon: path.resolve('./src/images/favicon.ico')
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].css",
+        filename: "style.css",
         chunkFilename: "[id].css"
       }),
       new MinifyPlugin(),

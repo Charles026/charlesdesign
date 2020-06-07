@@ -1,15 +1,38 @@
 body{
-  padding: 50px;
-  background: #f0f0f0;
+    background-color: #ffffff;
+}
+header{
+    padding: 1vh 7vw;
+}
+.hero{
+    padding: 24vh 7vw;
+}
+.showcase{
+    padding: 0vh 7vw;
+}
+.showcase-row{
+    padding: 0vh 7vw;
+}
+footer{
+    padding: 4vh 7vw;
 }
 
-.wrapper{
-  margin: 0 auto;
-  .img-wrapper{
-    height: 260px;
-  }
-  .card-text{
-    height: 74px;
+.img-box{
+    position: relative;
+    margin: auto;
     overflow: hidden;
-  }
+    border-radius: 32px;
+}
+
+.img-box img {
+    max-width: 100%;
+    transition: all 0.5s;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1.1);
+}
+
+.img-box:hover img {
+    transform: scale(1);
 }

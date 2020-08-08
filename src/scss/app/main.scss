@@ -1,27 +1,48 @@
-body{
-    background-color: #ffffff;
-}
-header{
-    padding: 1vh 7vw;
-}
-.hero{
-    padding: 24vh 7vw;
-}
-.showcase{
-    padding: 0vh 7vw;
-}
-.showcase-row{
-    padding: 0vh 7vw;
-}
-footer{
-    padding: 4vh 7vw;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body{
+    background-color: #ffffff;
+    height: 100vh;
+}
+
+.smoothScrollBar {
+    overflow: auto;
+}
+
+header{
+    padding: 1vh 14vw;
+}
+.hero{
+    padding: 24vh 14vw 20vh 14vw;
+}
+.showcase{
+    padding: 0vh 14vw;
+}
+.showcase-row{
+    padding: 0vh 14vw;
+}
+footer{
+    padding: 4vh 14vw;
+}
+p,h1,h2,h3,h4,h5,a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1,h2,h3,h4,h5{
+    font-weight: bold;
+}
+
+.emoji{
+    font-style: normal;
+}
 .img-box{
     position: relative;
     margin: auto;
     overflow: hidden;
-    border-radius: 32px;
+    border-radius: 18px;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
@@ -42,4 +63,18 @@ footer{
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
+}
+
+.text-tag {
+    color: rgba($color: #000000, $alpha: 0.3);
+}
+
+#case02,#case03,#case04 {
+    margin-top: 10rem;
+}
+
+@media (max-width: 767.98px) {
+    #case02,#case03,#case04 {
+        margin-top: 5rem;
+    }
 }

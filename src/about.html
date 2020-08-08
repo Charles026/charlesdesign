@@ -7,10 +7,10 @@
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
-<body class="smoothScrollBar">
+<body >
     <!-- Navbar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white hover-nav">
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,21 +31,42 @@
     </header>
 
 <!-- Content -->
-<div class="showcase" style="margin-top: 7rem;">
+<div class="showcase" style="margin: 7rem 0;">
   
   <div class="row">
-    <div class="col-lg-6" >
-      <h5 class="mb-3">Who I am</h5>
-      <p class="lead mb-5 pb-4" style="font-size: 1rem; line-height: 1.9rem;">Hi，我是 Charles，一个靠着玩弄像素和留白吃饭的人。从事互联网产品视觉设计已有 6 年。过去两年（18-20）我在马来西亚KL Central-Code 担任设计主管、资深设计师。</p>
-      <h5 class="mb-3">What I do</h5>
-      <p class="lead mb-5 pb-4" style="font-size: 1rem; line-height: 1.9rem;">产品视觉设计是我的主营业务，包括 UI 设计，品牌设计，设计管理，运营设计。同时我的 ”副业“ 也让我偶尔写写代码，画画漫画。</p>
-      <h5 class="mb-3">What else I do</h5>
-      <p class="lead mb-5 pb-4" style="font-size: 1rem; line-height: 1.9rem;">在 KL 的两年，出于消磨时间的目的，我经常喜欢在晚上等着街头的流浪小猫出现，给它们喂食。久而久之，机缘巧合，我竟然也在国外收养了两只流浪猫，阿呆和木木（这就是常在河边走，哪有不湿鞋的道理吗？）。现在它们跟着我一起回到广州啦。 </p>
-      
-
-      <!-- <img class="w-25" src="./images/cat@2x.png" alt=""> -->
+    <div
+    class="col-lg-6" >
+      <div 
+      data-sal="slide-up"
+      data-sal-delay="400"
+      data-sal-easing="easeInOutCubic"
+      data-sal-duration="1000">
+        <h5 class="mb-3">Who I am</h5>
+        <p class="lead mb-5 pb-4" style="font-size: 1rem; line-height: 1.9rem;">Hi，我是 Charles，一个靠着摆弄像素和留白吃饭的人。从事互联网产品视觉设计已有 6 年。过去两年（18-20）我在马来西亚KL Central-Code 担任设计主管、资深设计师。</p>
+      </div>
+      <div
+      data-sal="slide-up"
+      data-sal-delay="400"
+      data-sal-easing="easeInOutCubic"
+      data-sal-duration="1000">
+        <h5 class="mb-3">What I do</h5>
+        <p class="lead mb-5 pb-4" style="font-size: 1rem; line-height: 1.9rem;">产品视觉设计是我的主营业务，包括 UI 设计，品牌设计，设计管理，运营设计。同时我的 ”副业“ 也让我偶尔写写代码，画画漫画。</p>
+      </div>
+      <div
+      data-sal="slide-up"
+      data-sal-delay="400"
+      data-sal-easing="easeInOutCubic"
+      data-sal-duration="1000">
+        <h5 class="mb-3">What else I do</h5>
+        <p class="lead mb-5 pb-4" style="font-size: 1rem; line-height: 1.9rem;">在 KL 的两年，出于消磨时间的目的，我经常喜欢在晚上等着街头的流浪小猫出现，给它们喂食。久而久之，机缘巧合，我竟然也在国外收养了两只流浪猫，阿呆和木木（这就是常在河边走，哪有不湿鞋的道理吗？）。现在它们跟着我一起回到广州啦。 </p>
+      </div>
      </div>
-     <div class="col-lg-4 ml-auto" >
+     <div
+      data-sal="slide-up"
+      data-sal-delay="400"
+      data-sal-easing="easeInOutCubic"
+      data-sal-duration="1000"
+      class="col-lg-4 ml-auto" >
       <img class="float-right mt-5" style="width: 20rem;" src="./images/photo@2x.png" alt="">
      </div>
   </div>
@@ -53,13 +74,19 @@
 <!-- Footer -->
 <footer>
   <hr class="mt-2 mb-3" style="background-color: rgba(0,0,0,0.01);"/>
-  <div class="row my-5">
-    <div class="col-lg-6 justify-content-sm-center">
+  <div 
+    data-sal="slide-up"
+    data-sal-delay="300"
+    data-sal-easing="easeInOutCubic"
+    data-sal-duration="800" class="row my-5">
+    <div
+     class="col-lg-6 justify-content-sm-center">
       <img src="./images/ahdai.png" alt="" style="height: 2.8rem;">
       <p class="mb-0">Build with love for Ahdai</p>
       <p class="text-tag" style="font-size: small;">Copyright &copy; 2014-present Charles</p>
     </div>
-      <div class="col-lg-6 align-self-end">
+      <div
+       class="col-lg-6 align-self-end">
           <ul class="list-unstyled d-flex flex-row float-lg-right" style="font-size: 0.8rem;">
             <li class="mr-4">
                 <a class="text-dark" href="#">

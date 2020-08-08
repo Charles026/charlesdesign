@@ -78,3 +78,67 @@ h1,h2,h3,h4,h5{
         margin-top: 5rem;
     }
 }
+
+/* Effect hover nav: circle */
+
+@media (min-width: 992px) {
+    *,
+    *:after,
+    *::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+    nav a {
+        position: relative;
+        display: inline-block;
+        margin: 15px 25px;
+        
+    }
+    
+    nav a:hover,
+    nav a:focus {
+        outline: none;
+    }
+    
+    // .hover-nav a::before,
+    .hover-nav a::after {
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        width: 50px;
+        height: 50px;
+        background-color: rgba($color: #FFA606, $alpha: 0.2);
+        border-radius: 50%;
+        content: '';
+        opacity: 0;
+        -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+        -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+        transition: transform 0.3s, opacity 0.3s;
+        -webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
+        -moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+        transform: translateX(-50%) translateY(-50%) scale(0.2);
+    }
+    
+    // .hover-nav a::after {
+    // 	width: 50px;
+    // 	height: 50px;
+    // 	-webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
+    // 	-moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
+    // 	transform: translateX(-50%) translateY(-50%) scale(0.8);
+    // }
+    
+    .hover-nav a:hover::before,
+    .hover-nav a:hover::after
+     {
+        opacity: 1;
+        -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+        -moz-transform: translateX(-50%) translateY(-50%) scale(1);
+        transform: translateX(-50%) translateY(-50%) scale(1);
+    }
+    
+
+
+}
+
+

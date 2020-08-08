@@ -2,19 +2,20 @@ import "./scss/style.scss";
 import "bootstrap";
 import Scrollbar from 'smooth-scrollbar';
 import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
+import sal from 'sal.js';
 
 
+sal();
 
 Scrollbar.use(OverscrollPlugin);
-
 
 var options = {
     damping: 0.07,
     plugins: {
         overscroll: {
-            damping: 0.2,
+            damping: 0.15,
             effect: 'bounce',
-            maxOverscroll: 80,
+            maxOverscroll: 200,
             // effect : 'glow',
             // glowColor: '#000000'
         }  
@@ -25,6 +26,8 @@ var options = {
   Scrollbar.init(document.querySelector('.smoothScrollBar'), 
   options
   );
+
+
 
 console.log('hello') ;
 

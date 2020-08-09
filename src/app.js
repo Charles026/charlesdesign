@@ -5,7 +5,32 @@ import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import sal from 'sal.js';
 
 
-sal();
+
+//sal scroll animation effect
+
+sal({
+  threshold: 0.3
+});
+
+
+const scrollAnimations = sal();
+
+// Provide new options
+scrollAnimations.reset({
+  selector: '#case01',
+  threshold: 0.01,
+});
+
+const scrollAnimationsCase02 = sal();
+
+// Provide new options
+scrollAnimationsCase02.reset({
+  selector: '#case02',
+  threshold: 0.01,
+});
+
+
+//smooth scrollbar effect
 
 Scrollbar.use(OverscrollPlugin);
 

@@ -4,7 +4,8 @@ import Scrollbar from 'smooth-scrollbar';
 import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import sal from 'sal.js';
 
-
+//say hello
+console.log('hello') ;
 
 //sal scroll animation effect
 
@@ -52,8 +53,23 @@ var options = {
   options
   );
 
+  //destroy scrollbar at breakpoint
+
+  function clearScrollbar(x) {
+    if (x.matches) { // If media query matches
+      Scrollbar.destroy(document.body);
+      console.log(Scrollbar.has(document.body));
+    } else {
+      console.log(Scrollbar.has(document.body));
+    }
+  }
+  
+  var x = window.matchMedia("(max-width: 991px)")
+  clearScrollbar(x) // Call listener function at run time
+  x.addListener(clearScrollbar) // Attach listener function on state changes
 
 
-console.log('hello') ;
+
+
 
 

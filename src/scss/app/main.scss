@@ -22,19 +22,24 @@ header{
 .showcase{
     padding: 0vh 14vw;
 }
-.showcase-row{
-    padding: 0vh 14vw;
-}
 footer{
     padding: 4vh 14vw;
 }
-p,h1,h2,h3,h4,h5,a{
+p,h1,h2,h3,h4,h5,a,.project-title{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-h1,h2,h3,h4,h5{
+h1,h2,h3,h4,h5,.project-title{
     font-weight: bold;
 }
-
+.project-title{
+    font-size: 7.2vw;
+    line-height: 1.2;
+    color: transparent;
+    text-shadow: none;
+    -webkit-text-stroke: 2px #000000;
+    padding: 24vh 0vw 8vh 0vw;
+    
+}
 .emoji{
     font-style: normal;
 }

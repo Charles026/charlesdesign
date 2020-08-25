@@ -5,7 +5,9 @@ const webpack = require('webpack');
 
 module.exports = {
     mode:'development',
-    entry:['./src/app.js'],
+    entry:{
+      main: './src/app.js'
+    },
     output: {
         path: __dirname + '/dist',
         filename: '[name].bundle.js'
@@ -23,10 +25,28 @@ module.exports = {
             title: 'charles.design',
             template: path.resolve('./src/index.html'),
         }),
-        new HtmlWebpackPlugin({  // Also generate a about.html
+        new HtmlWebpackPlugin(
+          {  // Also generate a about.html
+          filename: 'alphads.html',
+          template: path.resolve('./src/alphads.html'),
+          chunks: ['main']
+        },),
+        new HtmlWebpackPlugin({
           filename: 'about.html',
-          template: path.resolve('./src/about.html')
+          template: path.resolve('./src/about.html'),
+          chunks: ['main']
         }),
+        new HtmlWebpackPlugin({
+          filename: 'motion.html',
+          template: path.resolve('./src/motion.html'),
+          chunks: ['main']
+        }),
+        new HtmlWebpackPlugin({
+          filename: 'starbucksapp.html',
+          template: path.resolve('./src/starbucksapp.html'),
+          chunks: ['main']
+        }),
+        
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new webpack.ProvidePlugin({

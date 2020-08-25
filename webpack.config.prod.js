@@ -32,6 +32,21 @@ module.exports = function (env, argv) {
         template: path.resolve('./src/about.html'),
         favicon: path.resolve('./src/images/favicon.ico')
       }),
+      new HtmlWebpackPlugin({  // Also generate a alpha.html
+        filename: 'alphads.html',
+        template: path.resolve('./src/alphads.html'),
+        favicon: path.resolve('./src/images/favicon.ico')
+      }),
+      new HtmlWebpackPlugin({  // Also generate a motion.html
+        filename: 'motion.html',
+        template: path.resolve('./src/motion.html'),
+        favicon: path.resolve('./src/images/favicon.ico')
+      }),
+      new HtmlWebpackPlugin({  // Also generate a motion.html
+        filename: 'starbucksapp.html',
+        template: path.resolve('./src/starbucksapp.html'),
+        favicon: path.resolve('./src/images/favicon.ico')
+      }),
       new MiniCssExtractPlugin({
         filename: "style.css",
         chunkFilename: "[id].css"

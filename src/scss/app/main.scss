@@ -50,7 +50,7 @@ h1,h2,h3,h4,h5,.project-title{
     position: relative;
     margin: auto;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 40px;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
@@ -62,9 +62,9 @@ h1,h2,h3,h4,h5,.project-title{
     display: block;
     width: 100%;
     height: auto;
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 .img-box:hover img {

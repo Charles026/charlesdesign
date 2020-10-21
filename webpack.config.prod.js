@@ -38,8 +38,8 @@ module.exports = function (env, argv) {
         favicon: path.resolve('./src/images/favicon.ico')
       }),
       new HtmlWebpackPlugin({  // Also generate a motion.html
-        filename: 'motion.html',
-        template: path.resolve('./src/motion.html'),
+        filename: 'audioguide.html',
+        template: path.resolve('./src/audioguide.html'),
         favicon: path.resolve('./src/images/favicon.ico')
       }),
       new HtmlWebpackPlugin({  // Also generate a motion.html

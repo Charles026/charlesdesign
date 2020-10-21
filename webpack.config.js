@@ -37,8 +37,8 @@ module.exports = {
           chunks: ['main']
         }),
         new HtmlWebpackPlugin({
-          filename: 'motion.html',
-          template: path.resolve('./src/motion.html'),
+          filename: 'audioguide.html',
+          template: path.resolve('./src/audioguide.html'),
           chunks: ['main']
         }),
         new HtmlWebpackPlugin({

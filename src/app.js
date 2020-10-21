@@ -16,6 +16,12 @@ sal({
 
 const scrollAnimations = sal();
 
+//popover
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 // Provide new options
 scrollAnimations.reset({
   selector: '#case01',
@@ -67,7 +73,6 @@ var options = {
   var x = window.matchMedia("(max-width: 991px)")
   clearScrollbar(x) // Call listener function at run time
   x.addListener(clearScrollbar) // Attach listener function on state changes
-
 
 
 

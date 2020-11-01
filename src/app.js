@@ -19,7 +19,12 @@ const scrollAnimations = sal();
 //popover
 
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="popover"]').popover({
+    placement: 'top',
+    trigger: 'hover',
+    html: true,
+    content: '<img src="./images/qrcode@2x.png" alt="charles_mumu" class="img-fluid rounded p-3">'
+  })
 })
 
 // Provide new options

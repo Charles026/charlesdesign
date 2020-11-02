@@ -46,6 +46,11 @@ module.exports = {
           template: path.resolve('./src/starbucksapp.html'),
           chunks: ['main']
         }),
+        new HtmlWebpackPlugin({
+          filename: 'sponiaapp.html',
+          template: path.resolve('./src/sponiaapp.html'),
+          chunks: ['main']
+        }),
         
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
@@ -85,6 +90,7 @@ module.exports = {
                   {
                     loader: 'file-loader',
                     options: {
+                        esModule: false,
                         outputpath: './images',
                         name: 'dirname/[hash].[ext]'
                     }

@@ -37,14 +37,19 @@ module.exports = function (env, argv) {
         template: path.resolve('./src/alphads.html'),
         favicon: path.resolve('./src/images/favicon.ico')
       }),
-      new HtmlWebpackPlugin({  // Also generate a motion.html
+      new HtmlWebpackPlugin({  // Also generate a audioguide.html
         filename: 'audioguide.html',
         template: path.resolve('./src/audioguide.html'),
         favicon: path.resolve('./src/images/favicon.ico')
       }),
-      new HtmlWebpackPlugin({  // Also generate a motion.html
+      new HtmlWebpackPlugin({  // Also generate a starbucksapp.html
         filename: 'starbucksapp.html',
         template: path.resolve('./src/starbucksapp.html'),
+        favicon: path.resolve('./src/images/favicon.ico')
+      }),
+      new HtmlWebpackPlugin({  // Also generate a sponiaapp.html
+        filename: 'sponiaapp.html',
+        template: path.resolve('./src/sponiaapp.html'),
         favicon: path.resolve('./src/images/favicon.ico')
       }),
       new MiniCssExtractPlugin({
@@ -86,6 +91,7 @@ module.exports = function (env, argv) {
             {
               loader: "file-loader",
               options: {
+                esModule: false,
                 outputPath: './images',
                 name: "[name].[ext]",
               },

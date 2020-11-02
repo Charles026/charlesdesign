@@ -16,16 +16,6 @@ sal({
 
 const scrollAnimations = sal();
 
-//popover
-
-$(function () {
-  $('[data-toggle="popover"]').popover({
-    placement: 'top',
-    trigger: 'hover',
-    html: true,
-    content: '<img src="./images/qrcode@2x.png" alt="charles_mumu" class="img-fluid rounded p-3">'
-  })
-})
 
 // Provide new options
 scrollAnimations.reset({
@@ -41,6 +31,21 @@ scrollAnimationsCase02.reset({
   threshold: 0.01,
 });
 
+//popover
+
+var qrImage = new Image();
+qrImage.src = require('./images/qrcode@2x.png');
+qrImage.classList.add('img-fluid','p-3')
+$(function () {
+  $('[data-toggle="popover"]').popover({
+    placement: 'top',
+    trigger: 'hover',
+    html: true,
+    content: qrImage
+  })
+});
+
+console.log(qrImage)
 
 //smooth scrollbar effect
 

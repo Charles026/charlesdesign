@@ -86,7 +86,7 @@ module.exports = function (env, argv) {
           }
         },
         {
-          test: /\.(jpg|jpeg|gif|png|svg|webp|mp4)$/,
+          test: /\.(jpg|jpeg|gif|png|svg|webp|mp4|webm)$/,
           use: [
             {
               loader: "file-loader",

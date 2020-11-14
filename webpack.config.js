@@ -42,6 +42,11 @@ module.exports = {
           chunks: ['main']
         }),
         new HtmlWebpackPlugin({
+          filename: 'daispouch.html',
+          template: path.resolve('./src/daispouch.html'),
+          chunks: ['main']
+        }),
+        new HtmlWebpackPlugin({
           filename: 'starbucksapp.html',
           template: path.resolve('./src/starbucksapp.html'),
           chunks: ['main']

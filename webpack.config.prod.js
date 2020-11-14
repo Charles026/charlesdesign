@@ -42,6 +42,11 @@ module.exports = function (env, argv) {
         template: path.resolve('./src/audioguide.html'),
         favicon: path.resolve('./src/images/favicon.ico')
       }),
+      new HtmlWebpackPlugin({  // Also generate a audioguide.html
+        filename: 'daispouch.html',
+        template: path.resolve('./src/daispouch.html'),
+        favicon: path.resolve('./src/images/favicon.ico')
+      }),
       new HtmlWebpackPlugin({  // Also generate a starbucksapp.html
         filename: 'starbucksapp.html',
         template: path.resolve('./src/starbucksapp.html'),

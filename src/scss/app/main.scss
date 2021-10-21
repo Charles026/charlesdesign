@@ -26,6 +26,7 @@ header{
     padding: 0vh 11vw;
 }
 
+
 footer{
     // padding: 2vh 11vw;
     margin-top: 10rem;
@@ -38,6 +39,39 @@ p,h1,h2,h3,h4,h5,a,.project-title{
 h1,h2,h3,h4,h5,.project-title{
     font-weight: bold;
 }
+
+.top-nav {
+    overflow: hidden;
+  }
+  
+  .top-nav a {
+    float: left;
+    display: block;
+    color: black;
+    font-size: 14px;
+    padding: 2px px;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .top-nav a:hover {
+    border-bottom: 3px solid #1a1a1a;
+  }
+  
+  .top-nav a.active {
+    border-bottom: 3px solid #1a1a1a;
+  }
+
+.tag-pill {
+    padding: 4px 12px ;
+    background-color: #f4f4f4;
+    border-radius: 40px;
+    font-size: 14px;
+    color: #383838;
+}
+
 .project-title{
     font-size: 6.8vw;
     line-height: 1.2;
@@ -51,6 +85,10 @@ h1,h2,h3,h4,h5,.project-title{
     font-size: 1.2rem;
     
 }
+.showcase-section {
+    margin-bottom: 120px;
+}
+
 .emoji{
     font-style: normal;
 }
@@ -58,7 +96,8 @@ h1,h2,h3,h4,h5,.project-title{
     position: relative;
     margin: auto;
     overflow: hidden;
-    border-radius: 40px;
+    border-radius: 12px;
+    height: 453px;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
@@ -68,8 +107,8 @@ h1,h2,h3,h4,h5,.project-title{
     -o-transition: all 0.5s;
     transition: all 0.5s;
     display: block;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 453px;
     -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
             transform: scale(1.05);
@@ -81,9 +120,7 @@ h1,h2,h3,h4,h5,.project-title{
             transform: scale(1);
 }
 
-.text-tag {
-    color: rgba($color: #000000, $alpha: 0.3);
-}
+
 
 #case02,#case03,#case04,#case05 {
     margin-top: 10rem;

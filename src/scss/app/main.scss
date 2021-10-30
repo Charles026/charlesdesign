@@ -76,6 +76,20 @@ h1,h2,h3,h4,h5,.project-title{
     color: #383838;
 }
 
+.project p {
+    color: #383838;
+    font-size: 14px;
+    line-height: 1.4rem;
+
+}
+.project h5{
+    font-size: 1rem;
+    color:#8C8C8C;
+    font-weight: normal;
+    text-transform: uppercase;
+    
+}
+
 .project-title{
     font-size: 80px;
     line-height: 1.2;
@@ -85,6 +99,17 @@ h1,h2,h3,h4,h5,.project-title{
     padding: 120px 0px 64px 0px;
     
 }
+
+.project-subtitle{
+    font-size: 20px;
+    font: smaller;
+    color: #545454;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #1a1a1a;
+}
+
 
 .project-title-space{
     padding: 140px 0px 64px 0px;

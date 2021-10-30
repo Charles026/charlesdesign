@@ -33,6 +33,12 @@ module.exports = {
         },),
         new HtmlWebpackPlugin(
           {  // Also generate a about.html
+          filename: 'digitaltrader.html',
+          template: path.resolve('./src/digitaltrader.html'),
+          chunks: ['main']
+        },),
+        new HtmlWebpackPlugin(
+          {  // Also generate a about.html
           filename: 'openplay.html',
           template: path.resolve('./src/openplay.html'),
           chunks: ['main']

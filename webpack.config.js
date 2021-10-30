@@ -27,6 +27,18 @@ module.exports = {
         }),
         new HtmlWebpackPlugin(
           {  // Also generate a about.html
+          filename: 'globalpay.html',
+          template: path.resolve('./src/globalpay.html'),
+          chunks: ['main']
+        },),
+        new HtmlWebpackPlugin(
+          {  // Also generate a about.html
+          filename: 'openplay.html',
+          template: path.resolve('./src/openplay.html'),
+          chunks: ['main']
+        },),
+        new HtmlWebpackPlugin(
+          {  // Also generate a about.html
           filename: 'alphads.html',
           template: path.resolve('./src/alphads.html'),
           chunks: ['main']

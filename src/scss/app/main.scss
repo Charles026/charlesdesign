@@ -13,7 +13,7 @@ body{
     overflow: auto;
 }
 
-header{
+.header-home{
     // padding: 1vh 11vw;
     margin-bottom: 128px;
 }
@@ -25,7 +25,9 @@ header{
 .showcase{
     padding: 0vh 11vw;
 }
-
+.case-banner{
+    margin-bottom: 64px;   
+}
 
 footer{
     // padding: 2vh 11vw;
@@ -44,7 +46,7 @@ h1,h2,h3,h4,h5,.project-title{
     overflow: hidden;
   }
   
-  .top-nav a {
+.top-nav a {
     float: left;
     display: block;
     color: black;
@@ -74,22 +76,18 @@ h1,h2,h3,h4,h5,.project-title{
     color: #383838;
 }
 
-// .project-title{
-//     font-size: 6.8vw;
-//     line-height: 1.2;
-//     color: transparent;
-//     text-shadow: none;
-//     -webkit-text-stroke: 2px #000000;
-//     padding: 24vh 0vw 14vh 0vw;
-    
-// }
-
 .project-title{
-    font-size: 64px;
+    font-size: 80px;
     line-height: 1.2;
-    color: #1a1a1a;
+    color: transparent;
+    text-shadow: none;
+    -webkit-text-stroke: 1px #000000;
     padding: 24vh 0vw 14vh 0vw;
     
+}
+
+.project-title-space{
+    padding: 140px 0px 64px 0px;
 }
 
 .project-footer-link {

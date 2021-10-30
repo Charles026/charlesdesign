@@ -33,6 +33,16 @@ module.exports = function (env, argv) {
         favicon: path.resolve('./src/images/favicon.ico')
       }),
       new HtmlWebpackPlugin({  // Also generate a alpha.html
+        filename: 'globalpay.html',
+        template: path.resolve('./src/globalpay.html'),
+        favicon: path.resolve('./src/images/favicon.ico')
+      }),
+      new HtmlWebpackPlugin({  // Also generate a alpha.html
+        filename: 'openplay.html',
+        template: path.resolve('./src/openplay.html'),
+        favicon: path.resolve('./src/images/favicon.ico')
+      }),
+      new HtmlWebpackPlugin({  // Also generate a alpha.html
         filename: 'alphads.html',
         template: path.resolve('./src/alphads.html'),
         favicon: path.resolve('./src/images/favicon.ico')

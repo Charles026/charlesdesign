@@ -131,7 +131,8 @@ h1,h2,h3,h4,h5,.project-title{
     margin: auto;
     overflow: hidden;
     border-radius: 12px;
-    height: 453px;
+    width: auto;
+    height: auto;
     mask-image:  -webkit-radial-gradient(white, black);
     -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
@@ -143,7 +144,7 @@ h1,h2,h3,h4,h5,.project-title{
     transition: all 0.5s;
     display: block;
     width: auto;
-    height: 453px;
+    height: auto;
     -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
             transform: scale(1.05);

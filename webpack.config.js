@@ -33,6 +33,12 @@ module.exports = {
         },),
         new HtmlWebpackPlugin(
           {  // Also generate a about.html
+          filename: 'dtp.html',
+          template: path.resolve('./src/dtp.html'),
+          chunks: ['main']
+        },),
+        new HtmlWebpackPlugin(
+          {  // Also generate a about.html
           filename: 'digitaltrader.html',
           template: path.resolve('./src/digitaltrader.html'),
           chunks: ['main']

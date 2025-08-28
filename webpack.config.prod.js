@@ -118,7 +118,8 @@ module.exports = function (env, argv) {
               loader: "file-loader",
               options: {
                 esModule: false,
-                outputPath: './images',
+                outputPath: 'images',
+                publicPath: 'images/',
                 name: "[name].[ext]",
               },
             },

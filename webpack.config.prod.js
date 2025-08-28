@@ -113,17 +113,10 @@ module.exports = function (env, argv) {
         },
         {
           test: /\.(jpg|jpeg|gif|png|svg|webp|mp4|webm)$/,
-          use: [
-            {
-              loader: "file-loader",
-              options: {
-                esModule: false,
-                outputPath: 'images',
-                publicPath: 'images/',
-                name: "[name].[ext]",
-              },
-            },
-          ],
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[name].[hash][ext]'
+          }
         },
         {
           test: /\.html$/,

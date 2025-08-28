@@ -1,8 +1,8 @@
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const MinifyPlugin = require("babel-minify-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require('webpack');
 const path = require('path');
 
@@ -16,7 +16,8 @@ module.exports = function (env, argv) {
     },
     optimization: {
       minimizer: [
-        new OptimizeCSSAssetsPlugin()
+        new TerserPlugin(),
+        new CssMinimizerPlugin()
       ]
     }
     ,
@@ -81,7 +82,7 @@ module.exports = function (env, argv) {
         filename: "style.css",
         chunkFilename: "[id].css"
       }),
-      new MinifyPlugin(),
+
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',

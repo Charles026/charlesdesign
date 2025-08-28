@@ -37,7 +37,7 @@ scrollAnimationsCase02.reset({
 //popover
 
 var qrImage = new Image();
-qrImage.src = require('images/qrcode@2x.png');
+qrImage.src = require('./images/qrcode@2x.png');
 qrImage.classList.add('img-fluid','p-3')
 $(function () {
   $('[data-toggle="popover"]').popover({

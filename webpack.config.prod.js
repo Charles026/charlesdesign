@@ -84,7 +84,7 @@ module.exports = function (env, argv) {
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
         'window.$': 'jquery',
-        Popper: ['popper.js', 'default']
+        Popper: ['@popperjs/core', 'default']
       })
     ],
     module: {
@@ -94,7 +94,17 @@ module.exports = function (env, argv) {
           use: [
             MiniCssExtractPlugin.loader,
             "css-loader",
-            "sass-loader"
+            "postcss-loader",
+            {
+              loader: "sass-loader",
+              options: {
+                api: "modern-compiler",
+                sassOptions: {
+                  quietDeps: true,
+                  silenceDeprecations: ["legacy-js-api", "import", "color-functions"]
+                }
+              }
+            }
           ]
         },
         {

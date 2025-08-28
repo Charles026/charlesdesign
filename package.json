@@ -37,6 +37,9 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.1"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.2",

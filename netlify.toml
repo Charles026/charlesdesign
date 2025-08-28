@@ -4,3 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# Use the latest stable build image (Ubuntu 22.04 LTS)
+# This addresses the Focal deprecation warning
+[context.production.environment]
+  NODE_VERSION = "20"

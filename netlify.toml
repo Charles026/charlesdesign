@@ -4,13 +4,11 @@
 
 [build.environment]
   NODE_VERSION = "20.18.0"
-  NODE_ENV = "production"
 
 # Use Ubuntu Noble 24.04 LTS build image (latest stable)
 # This addresses the Focal deprecation warning and future-proofs the build
 [context.production.environment]
   NODE_VERSION = "20.18.0"
-  NODE_ENV = "production"
 
 # Ensure all contexts use the same Node.js version
 [context.deploy-preview.environment]

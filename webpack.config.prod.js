@@ -28,11 +28,7 @@ module.exports = function (env, argv) {
         template: path.resolve('./src/index.html'),
         favicon: path.resolve('./src/images/favicon.ico')
       }),
-      new HtmlWebpackPlugin({  // Also generate a about.html
-        filename: 'about.html',
-        template: path.resolve('./src/about.html'),
-        favicon: path.resolve('./src/images/favicon.ico')
-      }),
+
       new HtmlWebpackPlugin({  // Also generate a alpha.html
         filename: 'globalpay.html',
         template: path.resolve('./src/globalpay.html'),

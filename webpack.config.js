@@ -53,11 +53,7 @@ module.exports = {
             template: path.resolve('./src/alphads.html'),
             chunks: ['main']
         }),
-        new HtmlWebpackPlugin({
-            filename: 'about.html',
-            template: path.resolve('./src/about.html'),
-            chunks: ['main']
-        }),
+
         new HtmlWebpackPlugin({
             filename: 'audioguide.html',
             template: path.resolve('./src/audioguide.html'),

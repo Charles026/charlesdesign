@@ -5,6 +5,7 @@ import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import sal from 'sal.js';
 
 import './components/footer-component.js';
+import './components/header-component.js';
 
 //say hello
 console.log('hello') ;

@@ -156,7 +156,7 @@ class FooterComponent extends HTMLElement {
         <hr class="footer-divider">
         <div class="footer-content">
           <div class="footer-brand">
-            <img src="images/ahdai.png" alt="Ahdai" class="footer-logo">
+            <img src="${require('../images/ahdai.png')}" alt="Ahdai" class="footer-logo">
             <p class="footer-text">Built with love for Ahdai</p>
             <p class="footer-copyright">Copyright © 2014-${year} Charles</p>
           </div>
@@ -176,7 +176,7 @@ class FooterComponent extends HTMLElement {
                 <a class="footer-link wechat-link">
                   WeChat
                   <div class="qr-tooltip" id="qr-tooltip">
-                    <img src="images/qrcode@2x.png" alt="WeChat QR Code" class="qr-image">
+                    <img src="${require('../images/qrcode@2x.png')}" alt="WeChat QR Code" class="qr-image">
                   </div>
                 </a>
               </li>

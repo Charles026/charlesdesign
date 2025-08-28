@@ -12,7 +12,8 @@ module.exports = function (env, argv) {
     entry:['./src/app.js'],
     output: {
       path: __dirname + '/dist',
-      filename: '[name].[contentHash].bundle.js'
+      filename: '[name].[contentHash].bundle.js',
+      publicPath: './'
     },
     optimization: {
       minimizer: [

@@ -2,140 +2,132 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-
 module.exports = {
-    mode:'development',
-    entry:{
-      main: './src/app.js'
+    mode: 'development',
+    entry: {
+        main: './src/app.js'
     },
     output: {
-        path: __dirname + '/dist',
-        filename: '[name].bundle.js'
-      },
-    devtool:'source-maps',
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        clean: true // 替代 CleanWebpackPlugin
+    },
+    devtool: 'source-map',
     devServer: {
-        contentBase: path.join(__dirname,'src'),
-        watchContentBase: true,
+        static: {
+            directory: path.join(__dirname, 'src'),
+            watch: true
+        },
         hot: true,
         open: true,
-        inline: true,
-      },
-    plugins:[
+        compress: true,
+        port: 8081
+    },
+    plugins: [
         new HtmlWebpackPlugin({
             title: 'charles.design',
             template: path.resolve('./src/index.html'),
         }),
-        new HtmlWebpackPlugin(
-          {  // Also generate a about.html
-          filename: 'globalpay.html',
-          template: path.resolve('./src/globalpay.html'),
-          chunks: ['main']
-        },),
-        new HtmlWebpackPlugin(
-          {  // Also generate a about.html
-          filename: 'dtp.html',
-          template: path.resolve('./src/dtp.html'),
-          chunks: ['main']
-        },),
-        new HtmlWebpackPlugin(
-          {  // Also generate a about.html
-          filename: 'digitaltrader.html',
-          template: path.resolve('./src/digitaltrader.html'),
-          chunks: ['main']
-        },),
-        new HtmlWebpackPlugin(
-          {  // Also generate a about.html
-          filename: 'openplay.html',
-          template: path.resolve('./src/openplay.html'),
-          chunks: ['main']
-        },),
-        new HtmlWebpackPlugin(
-          {  // Also generate a about.html
-          filename: 'alphads.html',
-          template: path.resolve('./src/alphads.html'),
-          chunks: ['main']
-        },),
         new HtmlWebpackPlugin({
-          filename: 'about.html',
-          template: path.resolve('./src/about.html'),
-          chunks: ['main']
+            filename: 'globalpay.html',
+            template: path.resolve('./src/globalpay.html'),
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
-          filename: 'audioguide.html',
-          template: path.resolve('./src/audioguide.html'),
-          chunks: ['main']
+            filename: 'dtp.html',
+            template: path.resolve('./src/dtp.html'),
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
-          filename: 'daispouch.html',
-          template: path.resolve('./src/daispouch.html'),
-          chunks: ['main']
+            filename: 'digitaltrader.html',
+            template: path.resolve('./src/digitaltrader.html'),
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
-          filename: 'starbucksapp.html',
-          template: path.resolve('./src/starbucksapp.html'),
-          chunks: ['main']
+            filename: 'openplay.html',
+            template: path.resolve('./src/openplay.html'),
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
-          filename: 'sponiaapp.html',
-          template: path.resolve('./src/sponiaapp.html'),
-          chunks: ['main']
+            filename: 'alphads.html',
+            template: path.resolve('./src/alphads.html'),
+            chunks: ['main']
         }),
-        
+        new HtmlWebpackPlugin({
+            filename: 'about.html',
+            template: path.resolve('./src/about.html'),
+            chunks: ['main']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'audioguide.html',
+            template: path.resolve('./src/audioguide.html'),
+            chunks: ['main']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'daispouch.html',
+            template: path.resolve('./src/daispouch.html'),
+            chunks: ['main']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'starbucksapp.html',
+            template: path.resolve('./src/starbucksapp.html'),
+            chunks: ['main']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'sponiaapp.html',
+            template: path.resolve('./src/sponiaapp.html'),
+            chunks: ['main']
+        }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
         new webpack.ProvidePlugin({
-          $: 'jquery',
-          jQuery: 'jquery',
-          'window.jQuery': 'jquery',
-          'window.$': 'jquery',
-          Popper: ['popper.js', 'default']
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
+            Popper: ['@popperjs/core', 'default']
         })
     ],
-    module:{
+    module: {
         rules: [
             {
-              test: /\.js$/,
-              exclude: /(node_modules|bower_components)/,
-              use: {
-                loader: 'babel-loader',
-                options: {
-                  presets: ['@babel/preset-env']
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
                 }
-              }
             },
             {
                 test: /\.scss$/,
-                use: [{
-                    loader: "style-loader" // 将 JS 字符串生成为 style 节点
-                }, {
-                    loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
-                }, {
-                    loader: "sass-loader" // 将 Sass 编译成 CSS
-                }]
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "postcss-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            api: "modern-compiler",
+                            sassOptions: {
+                                quietDeps: true,
+                                silenceDeprecations: ["legacy-js-api", "import", "color-functions"]
+                            }
+                        }
+                    }
+                ]
             },
             {
                 test: /\.(jpg|jpeg|gif|png|svg|webp|mp4|webm)$/,
-                use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                        esModule: false,
-                        outputpath: './images',
-                        name: 'dirname/[hash].[ext]'
-                    }
-                  }
-                ]
-              },
-              {
-                test: /\.(html)$/,
-                use: {
-                  loader: 'html-loader',
-                  options: {
-                  }
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[hash][ext][query]'
                 }
-              },
-          ],
-       
-        
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader'
+            }
+        ]
     }
 };

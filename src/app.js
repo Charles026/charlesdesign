@@ -4,6 +4,8 @@ import Scrollbar from 'smooth-scrollbar';
 import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import sal from 'sal.js';
 
+import './components/footer-component.js';
+
 //say hello
 console.log('hello') ;
 

@@ -1,6 +1,5 @@
-@import './vendor/variables.scss';
-@import "./vendor/bootstrap.scss";
+@import './tailwind';
+@import './vendor/variables';
+@import "~bootstrap/scss/bootstrap";
 @import './vendor/sal.css';
-@import './app/main.scss';
-
-
+@import './app/main';

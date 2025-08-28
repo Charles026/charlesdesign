@@ -33,8 +33,6 @@
     "style-loader": "^3.3.4",
     "tailwindcss": "^4.1.12",
     "terser-webpack-plugin": "^5.3.10",
-    "webpack": "^5.90.1",
-    "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.1"
   },
   "engines": {
@@ -45,6 +43,8 @@
     "bootstrap": "^5.3.2",
     "core-js": "^3.45.1",
     "jquery": "^3.7.1",
-    "sass": "^1.70.0"
+    "sass": "^1.70.0",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
   }
 }

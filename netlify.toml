@@ -5,7 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Use the latest stable build image (Ubuntu 22.04 LTS)
-# This addresses the Focal deprecation warning
+# Use Ubuntu Noble 24.04 LTS build image (latest stable)
+# This addresses the Focal deprecation warning and future-proofs the build
 [context.production.environment]
   NODE_VERSION = "20"
